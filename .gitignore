@@ -11,3 +11,5 @@ out/
 
 
 settings.gradle
+gradlew
+gradlew.bat
