@@ -50,6 +50,15 @@ public class TableTests {
         //WebElement mexico = driver.findElement(By.cssSelector("tr:nth-child(4) td:nth-child(3)"));
         WebElement mexico = driver.findElement(By.cssSelector("tr:nth-child(4) td:last-child"));
         System.out.println(mexico.getText());
+
+         //xpath
+        WebElement row4_2 = driver.findElement(By.xpath("//tr[4]"));
+        System.out.println(row4_2.getText());
+        System.out.println("===============================");
+
+        //WebElement mexico = driver.findElement(By.cssSelector("tr:nth-child(4) td:last-child"));
+        WebElement mexico_2 = driver.findElement(By.xpath("//tr[4]//td[last()]"));
+        System.out.println(mexico_2.getText());
     }
 }
 

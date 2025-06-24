@@ -94,4 +94,41 @@ public class FindElementTests {
         WebElement login = driver.findElement(By.cssSelector(".navigation-link:nth-child(6)"));
         System.out.println(login.getText());
     }
+
+    @Test
+    public void findElementByXpath(){
+        // //*[@attr='value']
+        //WebElement title =driver.findElement(By.cssSelector("h1"));
+        WebElement title =driver.findElement(By.xpath("//h1"));
+        //id->//tag[@id='value']
+        driver.findElement(By.xpath("//*[@id='city']"));
+        //WebElement search = driver.findElement(By.cssSelector(".navigation-link"));
+        WebElement search = driver.findElement(By.xpath("//*[@class='navigation-link']"));
+        System.out.println(search.getText());
+        //WebElement searchLink = driver.findElement(By.cssSelector("[href='/search']"));
+        WebElement searchLink = driver.findElement(By.xpath("//*[@href='/search']"));
+        System.out.println(searchLink.getText());
+        //start-> //tag[starts-with(@attr,'statsValue')]
+        driver.findElement(By.xpath("//*[starts-with(@class,'special')]"));
+        //contains -> //tag[contains(text(),'text')]
+        WebElement feedback = driver.findElement(By.xpath("//span[contains(text(),'Latest')]"));
+        System.out.println(feedback.getText());
+
+        //driver.findElement(By.cssSelector(".logo>img[alt='logo']"));
+        driver.findElement(By.xpath("//*[@class='logo']/img[@alt='logo']"));
+
+        //driver.findElement(By.cssSelector(".search-container>.subtitle"));
+        driver.findElement(By.xpath("//*[@class='search-container']/*[@class='subtitle']"));
+
+        //driver.findElement(By.cssSelector(".input-container #dates"));
+        driver.findElement(By.xpath("//*[@class='input-container']//input[@id='dates']"));
+
+        //WebElement login = driver.findElement(By.cssSelector(".navigation-link:nth-child(6)"));
+        WebElement login = driver.findElement(By.xpath("//a[6]"));
+        System.out.println(login.getText());
+
+        driver.findElement(By.xpath("//*[contains(.,'Latest')]"));
+        driver.findElement(By.xpath("//*[.=' Latest feedback from our customers ']"));
+    }
+
 }
