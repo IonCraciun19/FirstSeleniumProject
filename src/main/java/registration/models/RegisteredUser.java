@@ -1,4 +1,4 @@
-package com.ait.tests.registration;
+package registration.models;
 
 public class RegisteredUser {
 
