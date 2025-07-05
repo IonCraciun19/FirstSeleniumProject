@@ -13,19 +13,20 @@ public class AddItemToCartHelper extends BaseHelper {
         super(driver);
     }
 
-    public void addToCard(){
+    public void addToCard() {
         click(By.cssSelector(".item-box:nth-child(3) .button-2"));
     }
 
-    public void clickOnShoppingCart(){
+    public void clickOnShoppingCart() {
         click(By.cssSelector(".ico-cart > .cart-label"));
     }
 
-    public boolean isItemAddedByText(String text){
-       List<WebElement> elements = driver.findElements(By.cssSelector(".product > a.product-name"));
-       for (WebElement el:elements) {
-           if (el.getText().contains(text))
-               return true;
-       }return false;
+    public boolean isItemAddedByText(String text) {
+        List<WebElement> elements=driver.findElements(By.cssSelector(".product > a.product-name"));
+        for (WebElement el : elements) {
+            if (el.getText().contains(text))
+                return true;
+        }
+        return false;
     }
 }

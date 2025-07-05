@@ -12,7 +12,7 @@ public class UserHelper extends BaseHelper {
         super(driver);
     }
 
-    public void fillRegisterForm(User user){
+    public void fillRegisterForm(User user) {
         type(By.name("FirstName"), user.getFirstName());
         type(By.name("LastName"), user.getLastName());
         type(By.name("Email"), user.getEmail());
@@ -20,22 +20,21 @@ public class UserHelper extends BaseHelper {
         type(By.name("ConfirmPassword"), user.getPassword());
     }
 
-    public void clickOnRegisterButton(){
+    public void clickOnRegisterButton() {
         click(By.name("register-button"));
     }
 
-    public boolean isLogOutLinkPresent(){
+    public boolean isLogOutLinkPresent() {
         return isElementPresent(By.cssSelector("[href='/logout']"));
     }
 
-    public boolean isLogInLinkPresent(){
+    public boolean isLogInLinkPresent() {
         return isElementPresent(By.cssSelector("[href='login']"));
     }
 
-    public void clickOnRegistrationLink(){
+    public void clickOnRegistrationLink() {
         click(By.cssSelector("[href='/register']"));
     }
-
 
 
 }

@@ -10,7 +10,7 @@ import registration.models.RegisteredUser;
 public class AddItemToCartPositiveTest extends TestBase {
 
     @BeforeMethod
-    public void precondition(){
+    public void precondition() {
         app.getRegisteredUser().login(UserData.email, UserData.password);
     }
 

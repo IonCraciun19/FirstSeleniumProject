@@ -8,7 +8,7 @@ import registration.fw.UserHelper;
 
 import java.time.Duration;
 
-public class ApplicationManager  {
+public class ApplicationManager {
 
     WebDriver driver;
 
@@ -17,14 +17,14 @@ public class ApplicationManager  {
     AddItemToCartHelper addItemToCart;
 
     public void init() {
-        driver = new ChromeDriver();
+        driver=new ChromeDriver();
         driver.get("https://demowebshop.tricentis.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        user = new UserHelper(driver);
-        registeredUser = new RegisteredUserHelper(driver);
-        addItemToCart = new AddItemToCartHelper(driver);
+        user=new UserHelper(driver);
+        registeredUser=new RegisteredUserHelper(driver);
+        addItemToCart=new AddItemToCartHelper(driver);
     }
 
     public void stop() {

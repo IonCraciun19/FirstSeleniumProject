@@ -10,10 +10,10 @@ import registration.models.User;
 public class CreateAccountPositiveTests extends TestBase {
 
     @BeforeMethod
-    public void precondition(){
-        if (app.getRegisteredUser().isLoginLinkPresent()){
+    public void precondition() {
+        if (app.getRegisteredUser().isLoginLinkPresent()) {
             app.getUser().clickOnRegistrationLink();
-        }else {
+        } else {
             app.getRegisteredUser().clickOnLogOutLink();
             app.getUser().clickOnRegistrationLink();
         }
@@ -21,8 +21,8 @@ public class CreateAccountPositiveTests extends TestBase {
 
 
     @Test
-    public void newUserRegistrationTest(){
-        String randomEmail = "igreck"+System.currentTimeMillis() +"@qatest.com";
+    public void newUserRegistrationTest() {
+        String randomEmail="igreck" + System.currentTimeMillis() + "@qatest.com";
         System.out.println(randomEmail);
         app.getUser().clickOnRegistrationLink();
         app.getUser().fillRegisterForm(new User()
@@ -35,7 +35,7 @@ public class CreateAccountPositiveTests extends TestBase {
     }
 
     @AfterMethod
-    public void postcondition(){
+    public void postcondition() {
         app.getRegisteredUser().clickOnLogOutLink();
     }
 

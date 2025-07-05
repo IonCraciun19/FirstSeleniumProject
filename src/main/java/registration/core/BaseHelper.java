@@ -13,30 +13,30 @@ public class BaseHelper {
     protected WebDriver driver;
 
     public BaseHelper(WebDriver driver) {
-        this.driver = driver;
+        this.driver=driver;
     }
 
-    public void click(By locator){
+    public void click(By locator) {
         driver.findElement(locator).click();
     }
 
-    public void type(By locator, String text){
+    public void type(By locator, String text) {
         click(locator);
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
     }
 
-    public boolean isElementPresent(By locator){
-        return driver.findElements(locator).size()>0;
+    public boolean isElementPresent(By locator) {
+        return driver.findElements(locator).size() > 0;
     }
 
-    public boolean isAlertPresent(){
-        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(10))
+    public boolean isAlertPresent() {
+        Alert alert=new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.alertIsPresent());
 
-        if (alert==null){
+        if (alert == null) {
             return false;
-        }else {
+        } else {
             driver.switchTo().alert().accept();
             return true;
         }

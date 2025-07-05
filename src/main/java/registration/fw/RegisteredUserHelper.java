@@ -10,19 +10,19 @@ public class RegisteredUserHelper extends BaseHelper {
         super(driver);
     }
 
-    public void clickOnLoginLink(){
+    public void clickOnLoginLink() {
         click(By.cssSelector("[href='/login']"));
     }
 
-    public void clickOnLogOutLink(){
+    public void clickOnLogOutLink() {
         click(By.cssSelector("[href='/logout']"));
     }
 
-    public void clickOnLoginButton(){
+    public void clickOnLoginButton() {
         click(By.cssSelector(".buttons:nth-child(5)"));
     }
 
-    public void fillLoginForm(RegisteredUser registeredUser){
+    public void fillLoginForm(RegisteredUser registeredUser) {
         type(By.name("Email"), registeredUser.getEmail());
         type(By.name("Password"), registeredUser.getPassword());
     }
@@ -35,7 +35,7 @@ public class RegisteredUserHelper extends BaseHelper {
         return isElementPresent(By.cssSelector("[href='/login']"));
     }
 
-   public void login(String email, String password) {
+    public void login(String email, String password) {
         clickOnLoginLink();
         fillLoginForm(new RegisteredUser().setEmail(email)
                 .setPassword(password));

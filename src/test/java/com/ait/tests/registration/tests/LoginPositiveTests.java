@@ -10,12 +10,12 @@ import registration.models.RegisteredUser;
 public class LoginPositiveTests extends TestBase {
 
     @BeforeMethod
-    public void precondition(){
+    public void precondition() {
 
     }
 
     @Test
-    public void LoginRegisteredUserTest(){
+    public void LoginRegisteredUserTest() {
         app.getRegisteredUser().clickOnLoginLink();
         app.getRegisteredUser().fillLoginForm(new RegisteredUser().setEmail("igreck1@mail.com")
                 .setPassword("Igreck$123"));
@@ -24,7 +24,7 @@ public class LoginPositiveTests extends TestBase {
     }
 
     @AfterMethod
-    public void postcondition(){
+    public void postcondition() {
         app.getRegisteredUser().clickOnLogOutLink();
     }
 
