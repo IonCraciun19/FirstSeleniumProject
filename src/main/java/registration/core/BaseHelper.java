@@ -30,15 +30,4 @@ public class BaseHelper {
         return driver.findElements(locator).size() > 0;
     }
 
-    public boolean isAlertPresent() {
-        Alert alert=new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.alertIsPresent());
-
-        if (alert == null) {
-            return false;
-        } else {
-            driver.switchTo().alert().accept();
-            return true;
-        }
-    }
 }
