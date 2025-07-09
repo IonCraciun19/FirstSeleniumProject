@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite2" verbose="1">
+    <test name="Regression">
+        <classes>
+            <class name="com.ait.tests.registration.tests.CreateAccountPositiveTests"/>
+            <class name="com.ait.tests.registration.tests.AddItemToCartPositiveTest"></class>
+<!--            <parameter name="email" value="igreck9999@qatest.com"></parameter>-->
+<!--            <parameter name="password" value="Password$156"></parameter>-->
+        </classes>
+    </test>
+</suite>
