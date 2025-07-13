@@ -6,6 +6,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import registration.models.User;
+import registration.utils.MyDataProviders;
 
 public class CreateAccountPositiveTests extends TestBase {
 
@@ -22,14 +23,12 @@ public class CreateAccountPositiveTests extends TestBase {
 
     @Test
     public void newUserRegistrationTest() {
-        String randomEmail="igreck" + System.currentTimeMillis() + "@qatest.com";
-        System.out.println(randomEmail);
         app.getUser().clickOnRegistrationLink();
         app.getUser().fillRegisterForm(new User()
                 .setFirstName("Ilia")
                 .setLastName("Grenck")
-                .setEmail(randomEmail)
-                .setPassword("Password$156"));
+                .setEmail("igreck8988@qatest.com")
+                .setPassword("Password$9976"));
         app.getUser().clickOnRegisterButton();
         Assert.assertTrue(app.getUser().isLogOutLinkPresent());
     }
@@ -39,5 +38,23 @@ public class CreateAccountPositiveTests extends TestBase {
         app.getRegisteredUser().clickOnLogOutLink();
     }
 
+    @Test(dataProvider = "createUser", dataProviderClass= MyDataProviders.class)
+    public void createUserPositiveFromDataProviderTest (String firstName, String lastName,
+                                                        String email, String password){
+        app.getUser().clickOnRegistrationLink();
+        app.getUser().fillRegisterForm(new User().setFirstName(firstName)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setPassword(password));
+        app.getUser().clickOnRegisterButton();
+        Assert.assertTrue(app.getUser().isLogOutLinkPresent());
+    }
 
+    @Test(dataProvider =  "createNewUserFromCsv", dataProviderClass = MyDataProviders.class)
+    public void createUserPositiveFromDataProviderWithCsvTest(User user){
+        app.getUser().clickOnRegistrationLink();
+        app.getUser().fillRegisterForm(user);
+        app.getUser().clickOnRegisterButton();
+        Assert.assertTrue(app.getUser().isLogOutLinkPresent());
+    }
 }

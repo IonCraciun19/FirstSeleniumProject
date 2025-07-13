@@ -5,7 +5,9 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import registration.core.ApplicationManager;
 
+
 public class TestBase {
+
 
     protected static ApplicationManager app=new ApplicationManager
             (System.getProperty("browser", Browser.CHROME.browserName()));
@@ -21,5 +23,7 @@ public class TestBase {
     public void tearDown() {
         app.stop();
     }
+
+
 
 }
