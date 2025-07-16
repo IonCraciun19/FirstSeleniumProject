@@ -20,7 +20,6 @@ public class CreateAccountPositiveTests extends TestBase {
         }
     }
 
-
     @Test
     public void newUserRegistrationTest() {
         app.getUser().clickOnRegistrationLink();
@@ -38,9 +37,9 @@ public class CreateAccountPositiveTests extends TestBase {
         app.getRegisteredUser().clickOnLogOutLink();
     }
 
-    @Test(dataProvider = "createUser", dataProviderClass= MyDataProviders.class)
-    public void createUserPositiveFromDataProviderTest (String firstName, String lastName,
-                                                        String email, String password){
+    @Test(dataProvider = "createUser", dataProviderClass = MyDataProviders.class)
+    public void createUserPositiveFromDataProviderTest(String firstName, String lastName,
+                                                       String email, String password) {
         app.getUser().clickOnRegistrationLink();
         app.getUser().fillRegisterForm(new User().setFirstName(firstName)
                 .setLastName(lastName)
@@ -50,8 +49,8 @@ public class CreateAccountPositiveTests extends TestBase {
         Assert.assertTrue(app.getUser().isLogOutLinkPresent());
     }
 
-    @Test(dataProvider =  "createNewUserFromCsv", dataProviderClass = MyDataProviders.class)
-    public void createUserPositiveFromDataProviderWithCsvTest(User user){
+    @Test(dataProvider = "createNewUserFromCsv", dataProviderClass = MyDataProviders.class)
+    public void createUserPositiveFromDataProviderWithCsvTest(User user) {
         app.getUser().clickOnRegistrationLink();
         app.getUser().fillRegisterForm(user);
         app.getUser().clickOnRegisterButton();

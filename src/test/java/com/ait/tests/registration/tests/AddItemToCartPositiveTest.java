@@ -14,7 +14,6 @@ public class AddItemToCartPositiveTest extends TestBase {
         app.getRegisteredUser().login(UserData.email, UserData.password);
     }
 
-
     @Test
     public void buyProduct() {
         app.getAddItemToCart().addToCard();

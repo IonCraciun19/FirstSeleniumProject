@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.tests.registration.tests.CreateAccountPositiveTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-09T17:34:03.420Z" hostname="IONCRACIUN" time="2.799">
+  <properties/>
+  <testcase name="newUserRegistrationTest" classname="com.ait.tests.registration.tests.CreateAccountPositiveTests" time="2.799"/>
+  <system-out><![CDATA[igreck1752082443423@qatest.com
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

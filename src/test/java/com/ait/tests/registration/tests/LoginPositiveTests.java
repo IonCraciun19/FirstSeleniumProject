@@ -11,7 +11,6 @@ public class LoginPositiveTests extends TestBase {
 
     @BeforeMethod
     public void precondition() {
-
     }
 
     @Test
@@ -27,6 +26,5 @@ public class LoginPositiveTests extends TestBase {
     public void postcondition() {
         app.getRegisteredUser().clickOnLogOutLink();
     }
-
 
 }
