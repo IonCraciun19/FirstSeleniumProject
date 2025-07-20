@@ -2,6 +2,7 @@ package registration.core;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import registration.fw.AddItemToCartHelper;
@@ -32,6 +33,11 @@ public class ApplicationManager {
             driver = new FirefoxDriver();
         } else if (browser.equalsIgnoreCase("edge")){
             driver = new EdgeDriver();
+        } else if (browser.equalsIgnoreCase("headLess")){
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headLess");
+            options.addArguments("--window-size=1920,1080");
+            driver = new ChromeDriver(options);
         }
 
         driver.get("https://demowebshop.tricentis.com/");

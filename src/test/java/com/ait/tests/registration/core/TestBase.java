@@ -20,7 +20,7 @@ public class TestBase {
 
 
     protected static ApplicationManager app=new ApplicationManager
-            (System.getProperty("browser", Browser.CHROME.browserName()));
+            (System.getProperty("browser","chrome"));
 
     //@BeforeMethod
     @BeforeSuite
